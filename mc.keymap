@@ -1,0 +1,8 @@
+[main]
+Delete = f8; delete
+
+
+[panel]
+CdParentSmart=Backspace
+Mark = insert; ctrl-t; space
+

@@ -1,0 +1,58 @@
+
+set titlestring=Firefox
+set defsearch=google
+
+map <A-h> gT
+map <A-l> gt
+imap <A-h> <Esc>gT
+imap <A-l> <Esc>gt
+tmap <A-h> <Esc>gT
+tmap <A-l> <Esc>gt
+map <A-j> <C-S-e>
+
+unmap  <C-k>
+
+" Clear cache for current location
+map <C-A-d> :sanitize cache -host javascript:content.location.host | echo "Cache content removed."<CR>
+
+" Show bottom bar in fullscreen
+au Fullscreen .* :set guioptions+=s
+
+set nextpattern=\\bdalší,\\bstarší,\\bnásledující,\\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
+set previouspattern=\\bzpět,\\bnovější,\\bpředchozí,\\bprev\\bprevious,^<$,^(<<|«)$,^(<|«),(<|«)$
+
+" Web shortcuts
+set passkeys=
+set passkeys+='rememberthemilk.com/home/ajtakrajta':tcpdfgsulyrz1234<Delete>ankjihm<Tab><Esc>JKOq
+set passkeys+='jira.bdu.rocks':.ajkz12<Esc><Enter>
+set passkeys+='mail.google.com':'!#*+-./<C-Down><C-s><Enter>?INU[]acefjk lmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
+set passkeys+='slack.com':<Up><C-k><C-/><A-S-Up><A-S-Down><A-Up><A-Down><C-S-v>
+
+" Leave Firefox opened 
+set! browser.tabs.closeWindowWithLastTab=false
+
+command! pocket -description "Save to Pocket" open javascript:(function(){ISRIL_H='bfa3';PKT_D='getpocket.com';ISRIL_SCRIPT=document.createElement('SCRIPT');ISRIL_SCRIPT.type='text/javascript';ISRIL_SCRIPT.src='https://'+PKT_D+'/b/r.js';document.getElementsByTagName('head')[0].appendChild(ISRIL_SCRIPT)})();
+
+command! ngstats -description "Show ng-stats" open javascript:(function() {var a = document.createElement("script");a.src = "https://rawgithub.com/kentcdodds/ng-stats/master/src/ng-stats.js";document.head.appendChild(a);setTimeout(function() {window.showAngularStats({ logDigest: true, logWatches: true })}, 500);})();
+
+command! clearLocalStorage -description "Clear localStorage" open javascript:(function(){localStorage.clear()})();
+
+
+" https://github.com/tonio/dotfiles/blob/master/.pentadactylrc
+hi CmdLine font: normal 12.5px 'Open Sans' !important;
+hi StatusLine font: normal 12.5px 'Open Sans' !important;
+hi CmdOutput font: normal 12.5px 'Open Sans' !important;
+hi CompItem font: normal 12.5px 'Open Sans' !important;
+
+hi CompResult width: 45%; overflow: hidden;font-size: 13px; font-family: 'Open Sans'; font-weight: normal;
+hi CompMsg font-style: italic; margin-left: 16px;
+hi CompDesc color: white; width: 50%; font-size: 14px;
+
+" Zenburn theme
+hi Cmd                                          background-color:#3F3F3F;
+hi -a StatusLineNormal                          color:#ccdc90; background-color:#3F3F3F !important;
+hi -a 'StatusLineBroken [dactyl|highlight*="Status"]' background-color:transparent !important;color:#313633 !important;
+hi -a 'StatusLineExtended [dactyl|highlight*="Status"]' background-color:transparent !important;color:#313633 !important;
+hi -a 'StatusLineSecure [dactyl|highlight*="Status"]' background-color:transparent !important;color:#313633 !important;
+
+
