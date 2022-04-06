@@ -1,10 +1,15 @@
 
 require('variables')
 require('plugins')         
+require('setups')         
 
-require'nvim-tree'.setup {}
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-vim.o.termguicolors = true
-vim.o.background = 'light'
+vim.opt.termguicolors = true
+vim.opt.background = 'light'
 
-vim.cmd('colorscheme solarized')
+vim.wo.signcolumn = 'yes'
+
+vim.cmd [[colorscheme solarized]]
+
