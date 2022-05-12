@@ -6,6 +6,8 @@ return require('packer').startup(function(use)
 
   -- [[ UI ]]
 
+  use {'nvim-treesitter/nvim-treesitter'}
+
   use {
     'ishan9299/nvim-solarized-lua'
   }
@@ -22,6 +24,13 @@ return require('packer').startup(function(use)
 
   use {
     'lewis6991/gitsigns.nvim'
+  }
+
+  use {
+    'nvim-orgmode/orgmode',
+    config = function()
+      require('orgmode').setup{}
+    end
   }
 
 end)

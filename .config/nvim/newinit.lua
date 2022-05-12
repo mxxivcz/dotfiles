@@ -4,7 +4,7 @@ require('plugins')
 require('setups')         
 
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = '\t'
 
 vim.opt.termguicolors = true
 vim.opt.background = 'light'
