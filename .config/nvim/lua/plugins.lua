@@ -27,12 +27,12 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'nvim-orgmode/orgmode',
-    config = function()
-      require('orgmode').setup{}
-    end
+    'nvim-orgmode/orgmode'
   }
 
+  use {
+    "akinsho/org-bullets.nvim"
+  }
 
   use {
     'akinsho/bufferline.nvim',

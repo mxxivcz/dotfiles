@@ -2,8 +2,8 @@
 require('setups/telescope')
 require('setups/gitsigns')
 
-require'nvim-tree'.setup {}
-require("bufferline").setup {}
+require('nvim-tree').setup {}
+require('bufferline').setup {}
 
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
@@ -20,5 +20,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('orgmode').setup({
-  org_agenda_files = {'~/Nextcloud/orgmode/*'},
+  org_agenda_files = {'~/Nextcloud/Org/*'},
 })
+require('org-bullets').setup {}
