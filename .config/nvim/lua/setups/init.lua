@@ -3,6 +3,7 @@ require('setups/telescope')
 require('setups/gitsigns')
 
 require'nvim-tree'.setup {}
+require("bufferline").setup {}
 
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
