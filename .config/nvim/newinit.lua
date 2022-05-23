@@ -1,7 +1,6 @@
-
 require('variables')
-require('plugins')         
-require('setups')         
+require('plugins')
+require('setups')
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\t'

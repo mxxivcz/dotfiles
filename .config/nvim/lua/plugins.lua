@@ -42,5 +42,7 @@ return require('packer').startup(function(use)
 
   use 'karb94/neoscroll.nvim'
 
+  use 'cappyzawa/trim.nvim'
+
 end)
 
