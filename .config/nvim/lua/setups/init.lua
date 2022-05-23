@@ -1,9 +1,9 @@
 
 require('setups/telescope')
 require('setups/gitsigns')
+require('setups/bufferline')
 
 require('nvim-tree').setup {}
-require('bufferline').setup {}
 require('neoscroll').setup {}
 
 -- Load custom tree-sitter grammar for org filetype
