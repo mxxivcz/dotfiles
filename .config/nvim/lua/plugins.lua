@@ -40,5 +40,7 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   }
 
+  use 'karb94/neoscroll.nvim'
+
 end)
 

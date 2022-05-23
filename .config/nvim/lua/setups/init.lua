@@ -4,6 +4,7 @@ require('setups/gitsigns')
 
 require('nvim-tree').setup {}
 require('bufferline').setup {}
+require('neoscroll').setup {}
 
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
@@ -19,7 +20,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
-require('orgmode').setup({
+require('orgmode').setup {
   org_agenda_files = {'~/Nextcloud/Org/*'},
-})
+}
 require('org-bullets').setup {}
