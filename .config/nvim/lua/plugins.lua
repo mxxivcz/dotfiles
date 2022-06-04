@@ -3,6 +3,12 @@ return require('packer').startup(function(use)
 
   use {'nvim-treesitter/nvim-treesitter'}
 
+  use 'neovim/nvim-lspconfig'
+
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  use 'MunifTanjim/prettier.nvim'
+
   use {
     'ishan9299/nvim-solarized-lua'
   }
