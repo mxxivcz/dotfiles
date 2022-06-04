@@ -1,5 +1,5 @@
 require('setups/telescope')
-require('setups/gitsigns')
+require('setups/git')
 require('setups/bufferline')
 require('setups/orgmode')
 

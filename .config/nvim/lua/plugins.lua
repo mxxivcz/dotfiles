@@ -1,10 +1,5 @@
-
--- [[ plugins.lua ]]
-
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-
-  -- [[ UI ]]
 
   use {'nvim-treesitter/nvim-treesitter'}
 
@@ -22,9 +17,11 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {
-    'lewis6991/gitsigns.nvim'
-  }
+  use 'tpope/vim-fugitive'
+
+  use 'shumphrey/fugitive-gitlab.vim'
+
+  use 'lewis6991/gitsigns.nvim'
 
   use {
     'nvim-orgmode/orgmode'

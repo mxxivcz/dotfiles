@@ -9,6 +9,8 @@ require('gitsigns').setup {
     -- Navigation
     map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
     map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+    map('n', '<leader>j', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
+    map('n', '<leader>k', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
 
     -- Actions
     map('n', '<leader>hs', ':Gitsigns stage_hunk<CR>')
@@ -31,3 +33,27 @@ require('gitsigns').setup {
 
   end
 }
+
+vim.keymap.set("n", '<leader>gb', "<cmd>Git blame<cr>")
+
+-- vim.g.fugitive_gitlab_domains = ['https://gitlab.pricefx.eu']
+
+-- nnoremap <space>ga :Git add %:p<CR><CR>
+-- nnoremap <Leader>gs :Git<CR>
+-- nnoremap <Leader>gb :Git blame -w<CR>
+-- nnoremap <Leader>gc :Git commit -v -q<CR>
+-- nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
+-- nnoremap <Leader>ge :Gedit<CR>
+-- nnoremap <Leader>gr :Gread<CR>
+-- nnoremap <Leader>gw :Gwrite<CR><CR>
+-- nnoremap <Leader>gl :silent! Glog<CR>:bot copen<CR>
+-- nnoremap <Leader>gp :Ggrep<Leader>
+-- nnoremap <Leader>gm :Gmove<Leader>
+-- nnoremap <Leader>gb :Git branch<Leader>
+-- nnoremap <Leader>go :Git checkout<Leader>
+-- nnoremap <Leader>gps :Dispatch! git push<CR>
+-- nnoremap <Leader>gpl :Dispatch! git pull<CR>
+
+-- nnoremap <Leader>gd :Gdiffsplit!<CR>
+-- nnoremap gdt :diffget //2<CR>
+-- nnoremap gdm :diffget //3<CR>
