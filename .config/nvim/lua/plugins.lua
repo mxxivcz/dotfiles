@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
     'ishan9299/nvim-solarized-lua'
   }
 
-  use {                                              
+  use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   }
@@ -47,5 +47,6 @@ return require('packer').startup(function(use)
 
   use 'cappyzawa/trim.nvim'
 
-end)
+  use 'numToStr/Comment.nvim'
 
+end)
