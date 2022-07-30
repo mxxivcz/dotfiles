@@ -16,6 +16,7 @@ vim.opt.suffixesadd= ".js,.jsx,.ts,.tsx,.lua"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.undodir = vim.fn.getenv('HOME') .. '.local/share/nvim/undodir'
+vim.opt.clipboard = 'unnamedplus'
 
 vim.wo.signcolumn = 'yes'
 
@@ -25,11 +26,6 @@ vim.keymap.set("n", "<leader>s", ":wall<cr>")
 vim.keymap.set("n", "<leader>q", ":bdelete<cr>")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
-
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>d", "\"+d")
-vim.keymap.set("n", "<leader>p", "\"+p")
-vim.keymap.set("n", "<leader>P", "\"+P")
 
 vim.keymap.set("n", "<c-h>", "<c-w><c-h>")
 vim.keymap.set("n", "<c-j>", "<c-w><c-j>")
