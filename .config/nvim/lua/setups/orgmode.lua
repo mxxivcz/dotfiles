@@ -13,7 +13,3 @@ require'nvim-treesitter.configs'.setup {
 require('orgmode').setup {
   org_agenda_files = {'~/Nextcloud/Org/*'},
 }
-
-require('org-bullets').setup {
-  symbols = { "●", "◉", "○", "◦", "▸" }
-}
