@@ -43,6 +43,12 @@ return require('packer').startup(function(use)
 
   use 'cappyzawa/trim.nvim'
 
+  use {
+    '0x100101/lab.nvim',
+    run = 'cd js && npm ci',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+
   use 'numToStr/Comment.nvim'
 
   use 'phaazon/hop.nvim'

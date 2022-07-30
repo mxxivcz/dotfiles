@@ -9,3 +9,4 @@ require('nvim-tree').setup {}
 require('neoscroll').setup {}
 require('trim').setup {}
 require('Comment').setup {}
+require('lab').setup {}
