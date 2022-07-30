@@ -11,5 +11,6 @@ require('telescope').setup({
   }
 })
 
-vim.api.nvim_set_keymap('', '<C-p>', ':Telescope find_files<cr>', {})
-vim.api.nvim_set_keymap('', '<C-s>', ':Telescope live_grep<cr>', {})
+vim.keymap.set('n', '<C-p>', '<Cmd>Telescope find_files<cr>')
+vim.keymap.set('n', '<C-S-p>', '<Cmd>Telescope find_files cwd=%:p:h<cr>')
+vim.keymap.set('n', '<C-s>', '<Cmd>Telescope live_grep<cr>')
