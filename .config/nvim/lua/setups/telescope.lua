@@ -11,7 +11,8 @@ require('telescope').setup({
   }
 })
 
-require('telescope').load_extension "file_browser"
+require('telescope').load_extension('file_browser')
+require('telescope').load_extension('fzf')
 
 vim.keymap.set('n', '<C-p>', '<Cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<C-S-p>', '<Cmd>Telescope find_files cwd=%:p:h<cr>')
