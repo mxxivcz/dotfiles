@@ -1,6 +1,8 @@
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'vim-ctrlspace/vim-ctrlspace'
+
   use {'nvim-treesitter/nvim-treesitter'}
 
   use 'neovim/nvim-lspconfig'
@@ -47,12 +49,6 @@ use {
 
   use {
     'nvim-orgmode/orgmode'
-  }
-
-  use {
-    'akinsho/bufferline.nvim',
-    tag = 'v2.*',
-    requires = 'kyazdani42/nvim-web-devicons'
   }
 
   use 'karb94/neoscroll.nvim'
