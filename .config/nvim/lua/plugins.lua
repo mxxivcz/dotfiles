@@ -5,6 +5,15 @@ return require('packer').startup(function(use)
 
   use 'neovim/nvim-lspconfig'
 
+use {
+  'junegunn/fzf',
+  run = './install --bin'
+}
+use {
+  'ibhagwan/fzf-lua',
+  requires = { 'kyazdani42/nvim-web-devicons' }
+}
+
   use 'jose-elias-alvarez/null-ls.nvim'
 
   use 'MunifTanjim/prettier.nvim'

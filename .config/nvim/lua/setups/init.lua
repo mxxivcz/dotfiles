@@ -1,4 +1,4 @@
-require('setups/telescope')
+require('setups/fzf')
 require('setups/git')
 require('setups/bufferline')
 require('setups/orgmode')
