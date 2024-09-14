@@ -1,4 +1,3 @@
-
 local actions = require('fzf-lua.actions')
 
 require('fzf-lua').setup {
@@ -19,3 +18,5 @@ vim.keymap.set('n', '<space>ff', function() require('fzf-lua').files() end)
 vim.keymap.set('n', '<space>f<space>f', function() require('fzf-lua').files({ cwd="%:p:h" }) end)
 vim.keymap.set('n', '<space>fg', function() require('fzf-lua').live_grep({ cwd="%:p:h" }) end)
 vim.keymap.set('n', '<space>gs', function() require('fzf-lua').git_status() end)
+
+vim.keymap.set("n", "<a-j>", function() require('fzf-lua').buffers() end)

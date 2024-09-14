@@ -1,15 +1,31 @@
-require('orgmode').setup_ts_grammar()
-
 require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
   highlight = {
     enable = true,
-    disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
+    disable = {'org'},
+    additional_vim_regex_highlighting = {'org'},
   },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
+  ensure_installed = {'org'}, -- same as :TSUpdate org
 }
 
 require('orgmode').setup {
   org_agenda_files = {'~/Nextcloud/Org/*'},
+  org_default_notes_file = '~/Nextcloud/Org/Inbox.org',
+  org_hide_leading_stars = false,
+  org_indent_mode_turns_on_hiding_stars = false,
 }
+
+require('org-roam').setup({
+  extensions = {
+    dailies = {
+      directory = "Daily",
+    },
+  },
+  templates = {
+    d = {
+      description = "default",
+      template = "%?",
+      target = "%[title].org",
+    }
+  },
+  directory = '~/Nextcloud/Org/Roam',
+})
