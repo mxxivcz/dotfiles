@@ -1,0 +1,192 @@
+font pango:fira sans regular 9
+
+default_border pixel 6
+hide_edge_borders both
+for_window [class="^.*"] border pixel 6
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10+%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10-%
+bindsym XF86ScreenSaver exec --no-startup-id ~/.local/bin/screen-lock.sh
+bindsym XF86Launch1 exec --no-startup-id ~/.local/bin/monitor-setup.sh
+
+set $up k
+set $down j
+set $left h
+set $right l
+
+floating_modifier Mod1
+
+bindsym Mod4+Shift+Return exec alacritty
+
+bindsym Mod4+Shift+q kill
+
+bindsym Mod4+c exec playerctl --all-players play-pause
+bindsym Mod4+v exec flameshot gui
+bindsym Mod4+f exec rofi -show combi
+bindsym Mod4+d exec ~/.local/bin/buku-rofi
+bindsym Mod4+q exec ~/.local/bin/networkmanager_dmenu
+bindsym Mod4+b exec ~/Sources/rofi-bluetooth/rofi-bluetooth
+
+# https://git.et.tc/Jan/i3-config/blob/master/config.d/03windowKeyBindings.sh
+# mouse follows focus
+set $movemouse "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
+
+bindsym Mod4+$left focus left; exec $movemouse
+bindsym Mod4+$down focus down; exec $movemouse
+bindsym Mod4+$up focus up; exec $movemouse
+bindsym Mod4+$right focus right; exec $movemouse
+
+bindsym Mod4+Shift+$left move left
+bindsym Mod4+Shift+$down move down
+bindsym Mod4+Shift+$up move up
+bindsym Mod4+Shift+$right move right
+
+bindsym Mod4+Mod1+Shift+$left move workspace to output left
+bindsym Mod4+Mod1+Shift+$down move workspace to output down
+bindsym Mod4+Mod1+Shift+$up move workspace to output up
+bindsym Mod4+Mod1+Shift+$right move workspace to output right
+
+bindsym Mod4+semicolon workspace back_and_forth; exec $movemouse
+bindsym Mod4+Mod1+$left workspace prev; exec $movemouse
+bindsym Mod4+Mod1+$right workspace next; exec $movemouse
+bindsym --whole-window Mod4+button1 exec xdotool key XF86Back
+bindsym --whole-window Mod4+button2 workspace back_and_forth
+bindsym --whole-window Mod4+button3 exec xdotool key XF86Forward
+bindsym --whole-window Mod4+button4 workspace prev
+bindsym --whole-window Mod4+button5 workspace next
+
+bindsym Mod1+f fullscreen toggle
+
+bindsym Mod4+s split vertical
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+bindsym Mod4+t split toggle
+
+bindsym Mod4+Shift+space floating toggle
+
+bindsym Mod4+a focus parent
+
+bindsym Mod4+space scratchpad show
+
+for_window [title="orgmode"] floating enable
+for_window [title="orgmode"] resize set 1322 914
+for_window [title="orgmode"] move position center
+for_window [title="orgmode"] move window to scratchpad
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+workspace $ws1 output DP-1-1
+workspace $ws2 output DP-1-1
+workspace $ws3 output DP-1-1
+workspace $ws4 output DP-1-1
+workspace $ws5 output DP-1-1
+workspace $ws6 output DP-1-1
+workspace $ws7 output DP-1-1
+workspace $ws8 output DP-1-1
+workspace $ws9 output DP-1-1
+workspace $ws10 output LVDS-1
+
+bindsym Mod4+1 workspace $ws1; exec $movemouse
+bindsym Mod4+2 workspace $ws2; exec $movemouse
+bindsym Mod4+3 workspace $ws3; exec $movemouse
+bindsym Mod4+4 workspace $ws4; exec $movemouse
+bindsym Mod4+5 workspace $ws5; exec $movemouse
+bindsym Mod4+6 workspace $ws6; exec $movemouse
+bindsym Mod4+7 workspace $ws7; exec $movemouse
+bindsym Mod4+8 workspace $ws8; exec $movemouse
+bindsym Mod4+9 workspace $ws9; exec $movemouse
+bindsym Mod4+0 workspace $ws10; exec $movemouse
+
+bindsym Mod4+y workspace $ws1; exec $movemouse
+bindsym Mod4+u workspace $ws2; exec $movemouse
+bindsym Mod4+i workspace $ws3; exec $movemouse
+bindsym Mod4+o workspace $ws4; exec $movemouse
+bindsym Mod4+p workspace $ws5; exec $movemouse
+bindsym Mod4+n workspace $ws6; exec $movemouse
+bindsym Mod4+m workspace $ws7; exec $movemouse
+bindsym Mod4+comma workspace $ws8; exec $movemouse
+bindsym Mod4+period workspace $ws9; exec $movemouse
+bindsym Mod4+slash workspace $ws10; exec $movemouse
+
+bindsym Mod4+Shift+1 move container to workspace $ws1
+bindsym Mod4+Shift+2 move container to workspace $ws2
+bindsym Mod4+Shift+3 move container to workspace $ws3
+bindsym Mod4+Shift+4 move container to workspace $ws4
+bindsym Mod4+Shift+5 move container to workspace $ws5
+bindsym Mod4+Shift+6 move container to workspace $ws6
+bindsym Mod4+Shift+7 move container to workspace $ws7
+bindsym Mod4+Shift+8 move container to workspace $ws8
+bindsym Mod4+Shift+9 move container to workspace $ws9
+bindsym Mod4+Shift+0 move container to workspace $ws10
+
+bindsym Mod4+Shift+y move container to workspace $ws1
+bindsym Mod4+Shift+u move container to workspace $ws2
+bindsym Mod4+Shift+i move container to workspace $ws3
+bindsym Mod4+Shift+o move container to workspace $ws4
+bindsym Mod4+Shift+p move container to workspace $ws5
+bindsym Mod4+Shift+n move container to workspace $ws6
+bindsym Mod4+Shift+m move container to workspace $ws7
+bindsym Mod4+Shift+comma move container to workspace $ws8
+bindsym Mod4+Shift+period move container to workspace $ws9
+bindsym Mod4+Shift+slash move container to workspace $ws10
+
+for_window [class=".*"] title_format " %title"
+for_window [title="Microsoft Teams Notification"] floating enable
+for_window [title="Picture-in-Picture"] sticky enable
+
+bindsym Mod4+Mod1+c reload
+bindsym Mod4+Mod1+r restart
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+  bindsym $left       resize shrink width 5 px or 5 ppt
+  bindsym $down       resize grow height 5 px or 5 ppt
+  bindsym $up         resize shrink height 5 px or 5 ppt
+  bindsym $right      resize grow width 5 px or 5 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym Mod4+r mode "default"
+}
+
+bindsym Mod4+shift+r mode "resize"
+
+bar {
+  mode hide
+  hidden_state hide
+  modifier Mod1+Mod4
+  status_command i3status
+
+  # https://github.com/meh666ran/i3wmsolarized/blob/master/config/i3/config
+  colors {
+		background #0D3244
+		statusline #ffffff
+		separator  #ffffff
+		focused_workspace #0D3244 #0D3244 #ffffff
+		active_workspace  #444444 #444444 #ffffff
+		inactive_workspace #0D3244 #0D3244 #888888
+		urgent_workspace  #2f343a #900000 #ffffff
+	}
+}
+
+bindsym Mod4+Shift+b bar mode toggle
+
+exec --no-startup-id ~/.xmonad/startup.sh
+
+client.focused             #657b83  #657b83  #FFFFFF
+client.focused_inactive    #000000   #333333    #FFFFFF
+client.unfocused           #000000   #333333    #FFFFFF
+client.urgent              #dc322f #dc322f #dc322f
