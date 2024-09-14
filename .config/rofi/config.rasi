@@ -1,0 +1,15 @@
+configuration {
+	modi: "combi,window,drun,buku:~/.local/bin/rofi-buku-mode.sh";
+	width: 800;
+	lines: 20;
+	font: "PragmataPro Mono Liga 13";
+	combi-modi: "buku,window,drun";
+	separator-style: "none";
+	hide-scrollbar: true;
+	display-window: "WS";
+	display-drun: "Run";
+	display-combi: "";
+  display-buku: "Web";
+}
+
+@import "/home/vita/.config/rofi/themes/android_notification_custom.rasi"
