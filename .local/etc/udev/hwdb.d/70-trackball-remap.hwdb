@@ -1,0 +1,9 @@
+evdev:input:b0003v056Ep010D*
+ KEYBOARD_KEY_90001=btn_left
+ KEYBOARD_KEY_90002=btn_middle
+ KEYBOARD_KEY_90003=btn_extra
+ KEYBOARD_KEY_90004=btn_forward
+ KEYBOARD_KEY_90005=key_back
+ KEYBOARD_KEY_90006=key_home
+ KEYBOARD_KEY_90007=key_enter
+ KEYBOARD_KEY_90008=btn_right
