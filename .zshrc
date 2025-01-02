@@ -1,20 +1,19 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell2"
+ZSH_THEME="robbyrussell"
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 export EDITOR="nvim"
-export PAGER=nvimpager
 export WINIT_HIDPI_FACTOR=1
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgreprc
 export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
 source $HOME/.nvm/nvm.sh
 source $HOME/.zshrc_private
+source <(fzf --zsh)
 
-plugins=(git npm nvm node vi-mode k zsh-syntax-highlighting zshmarks docker yarn deno)
+plugins=(git npm nvm node vi-mode docker yarn deno jump)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/Projects/Keyboards/qmk_firmware/util/qmk_tab_complete.sh
 
 export NNN_PLUG='p:preview-tui;v:imgview'
 export NNN_FIFO='/tmp/nnn.fifo'
@@ -37,10 +36,10 @@ alias gsta='git stash save --include-untracked'
 alias grbi='git rebase -i --autosquash'
 alias gup='git pull --rebase --autostash'
 alias gst='git status'
-alias gd='git diff | tig'
 unalias gm
 alias vim=nvim
 alias vi=nvim
+alias t='tock -m -c -f ""'
 
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.go/bin
@@ -86,8 +85,6 @@ bindkey "^H" backward-kill-word
 
 KEYTIMEOUT=1
 
-source ~/.fzf.zsh
-
 unsetopt completealiases
 
 CHTSH_QUERY_OPTIONS="style=tango"
@@ -129,4 +126,4 @@ function layout-extonly {
   xrandr-smart --output '!(eDP-*)' --auto
 }
 
-source /home/vita/Sources/zmk/zephyr/zephyr-env.sh
+# source /home/vita/Sources/zmk/zephyr/zephyr-env.sh
