@@ -12,6 +12,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10+%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10-%
 bindsym XF86ScreenSaver exec --no-startup-id ~/.local/bin/screen-lock.sh
 bindsym XF86Launch1 exec --no-startup-id ~/.local/bin/monitor-setup.sh
+bindsym XF86Display exec --no-startup-id ~/.local/bin/monitor-setup.sh
 
 set $up k
 set $down j
@@ -29,7 +30,7 @@ bindsym Mod4+v exec flameshot gui
 bindsym Mod4+f exec rofi -show combi
 bindsym Mod4+d exec ~/.local/bin/buku-rofi
 bindsym Mod4+q exec ~/.local/bin/networkmanager_dmenu
-bindsym Mod4+b exec ~/Sources/rofi-bluetooth/rofi-bluetooth
+bindsym Mod4+b exec ~/.local/bin/rofi-bluetooth
 
 # https://git.et.tc/Jan/i3-config/blob/master/config.d/03windowKeyBindings.sh
 # mouse follows focus
@@ -72,10 +73,12 @@ bindsym Mod4+a focus parent
 
 bindsym Mod4+space scratchpad show
 
-for_window [title="orgmode"] floating enable
-for_window [title="orgmode"] resize set 1322 914
-for_window [title="orgmode"] move position center
-for_window [title="orgmode"] move window to scratchpad
+bindsym Mod4+g floating enable, resize set 1920 1920, move position center
+
+for_window [class="neovide-orgmode"] floating enable
+for_window [class="neovide-orgmode"] resize set 1432 960
+for_window [class="neovide-orgmode"] move position center
+for_window [class="neovide-orgmode"] move window to scratchpad
 
 set $ws1 "1"
 set $ws2 "2"
@@ -88,16 +91,16 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output DP-1-1
-workspace $ws2 output DP-1-1
-workspace $ws3 output DP-1-1
-workspace $ws4 output DP-1-1
-workspace $ws5 output DP-1-1
-workspace $ws6 output DP-1-1
-workspace $ws7 output DP-1-1
-workspace $ws8 output DP-1-1
-workspace $ws9 output DP-1-1
-workspace $ws10 output LVDS-1
+workspace $ws1 output eDP-1
+workspace $ws2 output DP-2
+workspace $ws3 output DP-2
+workspace $ws4 output DP-2
+workspace $ws5 output DP-2
+workspace $ws6 output DP-2
+workspace $ws7 output DP-2
+workspace $ws8 output DP-2
+workspace $ws9 output DP-2
+workspace $ws10 output DP-2
 
 bindsym Mod4+1 workspace $ws1; exec $movemouse
 bindsym Mod4+2 workspace $ws2; exec $movemouse
