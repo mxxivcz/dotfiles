@@ -1,3 +1,8 @@
+
+# sudo vi /etc/udev/hwdb.d/70-trackball-remap.hwdb
+# sudo systemd-hwdb update
+# sudo udevadm trigger
+
 evdev:input:b0003v056Ep010D*
  KEYBOARD_KEY_90001=btn_left
  KEYBOARD_KEY_90002=btn_middle
