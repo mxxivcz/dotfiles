@@ -15,6 +15,7 @@ vim.opt.ttimeoutlen = 5
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nc"
 vim.opt.wrap = false
+vim.opt.showmode = false
 
 vim.g.neovide_cursor_animation_length = 0
 
