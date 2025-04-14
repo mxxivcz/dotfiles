@@ -1,0 +1,22 @@
+{
+  "closeAppOnCross": true,
+  "enableIncomingCallToast": true,
+  "trayIconEnabled": false,
+  "media": {
+    "microphone": {
+      "disableAutogain": true
+    },
+    "video": {
+      "menuEnabled": true
+    }
+  },
+  "graphApi": {
+    "enabled": true
+  },
+  "mqtt": {
+    "enabled": true,
+    "brokerUrl": "mqtt://localhost:1883",
+    "topicPrefix": "teams",
+    "commandTopic": "command"
+  }
+}
