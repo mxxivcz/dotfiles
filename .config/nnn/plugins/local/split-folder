@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+
+split_folder() {
+  path=$(echo $1 | tr -d '\n')
+  folder=$(basename "$path")
+  parent=$(dirname "$path")
+  artist=${folder%% - *} 
+  album=${folder#* - }  
+  echo "-===========================-"
+  echo "Full path: $path"
+  echo "Folder to split: $folder"
+  echo "Parent: $parent"
+  echo "Artist: $artist"
+  echo "Album: $album"
+  mkdir "$parent/$artist"
+  mv "$path" "$parent/$artist/$album" 
+}
+
+if [ -s "$selection" ]; then
+  readarray folders <<< $(cat "$selection" | tr '\0' '\n' )
+  for folder in "${folders[@]}"
+  do
+    split_folder "$folder" 
+  done
+elif [ -n "$1" ]; then
+    if [ -d "$1" ]; then
+      split_folder "$1"
+    fi
+fi
+

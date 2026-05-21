@@ -15,14 +15,10 @@ plugins=(git npm nvm node vi-mode docker yarn deno jump)
 
 source $ZSH/oh-my-zsh.sh
 
-export NNN_PLUG='p:preview-tui;v:imgview'
-export NNN_FIFO='/tmp/nnn.fifo'
-
 alias mc="mc -bsx"
 alias j=jump
 alias p=pwd
 alias c='cut -b -$COLUMNS'
-alias n='nnn -eA'
 alias b=buku
 alias xo=xdg-open
 alias yr='yarn run'
@@ -127,3 +123,29 @@ function layout-extonly {
 }
 
 # source /home/vita/Sources/zmk/zephyr/zephyr-env.sh
+n ()
+{
+  # Block nesting of nnn in subshells
+  [ "${NNNLVL:-0}" -eq 0 ] || {
+      echo "nnn is already running"
+      return
+  }
+
+  export NNN_FIFO='/tmp/nnn.fifo'
+  export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+  export NNN_PLUG='e:!&easytag "$nnn";p:preview-tui;s:local/split-folder;o:fzopen;c:fzcd;m:nmount'
+
+  export NNN_BMS="d:$HOME/Downloads;a:$HOME/Audio/Audiobooks"
+  export NNN_COLORS="5236"
+
+  export sel=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection
+
+  command nnn -ae "$@"
+
+  [ ! -f "$NNN_TMPFILE" ] || {
+    . "$NNN_TMPFILE"
+    rm -f -- "$NNN_TMPFILE" > /dev/null
+  }
+}
+
