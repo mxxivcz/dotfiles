@@ -43,3 +43,4 @@ return {
 		end,
 	},
 }
+-- https://github.com/otavioschwanck/fzf-lua-enchanted-files

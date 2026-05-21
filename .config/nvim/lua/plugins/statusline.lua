@@ -15,7 +15,7 @@ return {
 
 			lualine_z = {
 				function()
-					return "⏳" .. os.date("%H:%M")
+					return os.date("%H:%M")
 				end,
 			},
 		},

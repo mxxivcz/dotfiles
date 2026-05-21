@@ -16,7 +16,10 @@ vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nc"
 vim.opt.wrap = false
 vim.opt.showmode = false
+vim.opt.termguicolors = true
+vim.opt.background = "light"
 
 vim.g.neovide_cursor_animation_length = 0
+vim.o.guifont = "PragmataPro Mono Liga:h12.5"
 
 vim.wo.signcolumn = "yes"
