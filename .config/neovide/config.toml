@@ -1,0 +1,10 @@
+[font]
+size = 13.5
+hinting = "slight"
+
+[[font.normal]]
+family = "PragmataPro Mono Liga"
+
+[[font.bold]]
+family = "PragmataPro Mono Liga"
+style = "W400"
