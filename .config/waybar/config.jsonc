@@ -1,0 +1,160 @@
+[
+  {
+    "name": "topbar",
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "battery#bat2",
+      "pulseaudio",
+      "network#wifi",
+      "network#disconnected",
+      "power-profiles-daemon",
+      "idle_inhibitor",
+      "clock"
+    ],
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "clock": {
+      "interval": 1,
+      "format": "<big>{:%H:%M}</big>",
+      "format-alt": "{:%Y-%m-%d}",
+      "tooltip-format": "{tz_list}",
+      "timezone-tooltip-format": "{:%H:%M %Z}",
+      "timezones": [
+        "Europe/Prague",
+        "America/Chicago",
+        "America/Los_Angeles",
+        "Etc/UTC"
+      ]
+    },
+    "battery#bat2": {
+      "bat": "BAT1",
+      "adapter": "AC",
+      "interval": 10,
+      "states": {
+        "full": 90,
+        "good": 80,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-full": " ",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "network#disconnected": {
+      "tooltip-format": "No connection!",
+      "format-ethernet": "",
+      "format-wifi": "",
+      "format-linked": "",
+      "format-disconnected": "",
+      "on-click": "nm-connection-editor"
+    },
+    "network#wifi": {
+      "interface": "wlp*",
+      "format-ethernet": "",
+      "format-wifi": "",
+      "format-linked": "",
+      "format-disconnected": "",
+      "tooltip-format": "{essid}\n{ifname}: {ipaddr}/{cidr} {signalStrength}%",
+      "on-click": "hypr-network-manager"
+    },
+    "pulseaudio": {
+      "scroll-step": 1,
+      "format": "{icon} {volume}%{format_source}",
+      "format-bluetooth": "{icon} {volume}%{format_source}",
+      "format-bluetooth-muted": " {icon}{format_source}",
+      "format-muted": " {format_source}",
+      "format-source": "  {volume}%",
+      "format-source-muted": " ",
+      "format-icons": {
+        "headphone": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "auto_null": "󰝟",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "hyprland/workspaces": {
+      "cursor": "pointer",
+      "on-click": "activate",
+      "active-only": false,
+      "format": "<big><span>{icon}</span> {windows}</big>",
+      "format-icons": {
+        "1": "󰎦",
+        "2": " 󰎩",
+        "3": " 󰎬",
+        "4": " 󰎮",
+        "5": " 󰎰",
+        "6": " 󰎵",
+        "7": " 󰎸",
+        "8": " 󰎻",
+        "9": " 󰎾",
+        "10": " 󰽾"
+      },
+      "format-window-separator": " ",
+      "window-rewrite-default": "󰖯",
+      "window-rewrite": {
+        "firefox": "",
+        "alacritty": "", 
+        "wezterm": "", 
+        "foot": "", 
+        "kitty": "", 
+        "neovide": "",
+        "spotify": "",
+        "teams-for-linux": "󰊻",
+        "com.github.IsmaelMartinez.teams_for_linux": "󰊻",
+        "pavucontrol": "󰐰",
+        "nautilus": "",
+        "evince": "󰈦",
+        "org.gnome.Papers": "󰈦",
+        "inkscape": "󱣜",
+        "FreeTube": "",
+        "de.schmidhuberj.tubefeeder": "",
+        "geary": "",
+        "thunderbird-beta": "",
+        "libreoffice-calc": "",
+        "libreoffice-writer": "",
+        "jetbrains-idea-ce": "",
+        "jetbrains-idea": "",
+        "Signal": "󰍩",
+        "gnome-power-statistics": "󱐥",
+        "gimp-3.0": "󱇤",
+        "mpv": "󰕧",
+        "blueman-manager": ""
+      }
+    },
+    "hyprland/window": {
+      "format": "{}",
+      "rewrite": {
+        "(.*) — Mozilla Firefox": "$1"
+      },
+      "separate-outputs": true
+    }
+  }
+]

@@ -1,0 +1,106 @@
+* {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-family: "Fira Sans", "Font Awesome 6 Free Solid";
+  font-size: 10px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: #000;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.empty {
+  color: rgba(0,0,0,0);
+}
+
+#workspaces button:hover {
+  color:  #b58900; 
+  background: rgba(0, 0, 0, 0.2); 
+  border: none;
+}
+
+#workspaces button span {
+  color: red
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: #fff;
+}
+
+#workspaces button.focused {
+  background-color: #64727D;
+  box-shadow: inset 0 3px #ffffff;
+}
+
+#workspaces button.urgent {
+  color: #dc322f;
+}
+
+#mode {
+  background-color: #64727D;
+  border-top: 0px solid #ffffff;
+}
+
+#backlight,
+#battery.bat1,
+#battery.bat2,
+#clock,
+#cpu,
+#custom-mail,
+#custom-poweroff,
+#custom-weather,
+#disk,
+#idle_inhibitor,
+#memory,
+#mode,
+#network.vpn,
+#network.wifi,
+#network.ethernet,
+#network.disconnected,
+#power-profiles-daemon,
+#pulseaudio,
+#taskbar,
+#temperature,
+#tray {
+  padding: 0 6px;
+  margin: 0 0px;
+  color: #ffffff;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.bat2.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#taskbar button:hover {
+  border: none;
+  background: rgba(0, 0, 0, 0.2); 
+  box-shadow: inset 0 3px #ffffff; 
+}
+
+#taskbar button.active {
+  background-color: #64727D;
+  box-shadow: inset 0 3px #ffffff;
+}
